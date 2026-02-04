@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'ChristmasLeaf';
+  src: url('./fonts/ChristmasLeafPersonalUse.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-christmas {
+  font-family: 'ChristmasLeaf', sans-serif;
+}
