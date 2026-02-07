@@ -6,15 +6,30 @@ import { WHATSAPP_LINK_CONSULTA, WHATSAPP_LINK_EXAME } from '../constants';
 
 const Services: React.FC = () => {
   const specialties = [
-    "Clínica Médica", "Cardiologia", "Ginecologia", "Pediatria", 
-    "Dermatologia", "Ortopedia", "Oftalmologia", "Endocrinologia",
-    "Otorrinolaringologia", "Urologia", "Nutrição", "Psicologia"
-  ];
+  "Angiologista",
+  "Coloproctologista",
+  "Cardiologista",
+  "Dermatologia",
+  "Escleroterapia",
+  "Fisioterapia",
+  "Fisioterapia Pélvica",
+  "Ginecologia",
+  "Neuropediatra",
+  "Nutrição",
+  "Ortopedia",
+  "Oftalmologia",
+  "Pediatria",
+  "Psicologia",
+  "Reumatologia",
+  "Ultrassonografia",
+  "Urologia"
+];
 
   const exams = [
     "Exames de Sangue", "Ultrassonografia", "Raio-X Digital", "Eletrocardiograma",
     "Teste Ergométrico", "Holter 24h", "MAPA 24h", "Endoscopia",
-    "Papanicolau", "Audiometria", "Ecocardiograma", "Exames Admissionais"
+    "Papanicolau", "Audiometria", "Ecocardiograma", "Exames Admissionais",  "Exames Laboratoriais",
+  "Exames Cardiológicos",
   ];
 
   return (

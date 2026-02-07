@@ -260,7 +260,7 @@ const App: React.FC = () => {
               {/* Map Side */}
               <div className="lg:w-1/2 min-h-[400px] relative">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3884.0!2d-39.0734!3d-13.37!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDIyJzEyLjAiUyAzOcKwMDQnMjQuMiJX!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3881.6314695807882!2d-39.07567982523089!3d-13.373176486980347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x73e440a4892e79b%3A0x78323acc7b8ea8cd!2sR.%20Conselheiro%20Ferraz%2C%2039%20-%20Centro%2C%20Valen%C3%A7a%20-%20BA%2C%2045400-000%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1770489894094!5m2!1spt-BR!2sus"
                   className="absolute inset-0 w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
