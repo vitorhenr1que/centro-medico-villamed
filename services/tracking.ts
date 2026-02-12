@@ -182,36 +182,41 @@ export const setupWhatsAppTracking = () => {
     // Gera Event ID ÚNICO para cada evento distinto
     // IMPORTANTE: Não usar o mesmo ID para eventos diferentes, pois a Meta pode confundir a deduplicação
     const eventIdClick = generateEventId();
-    const eventIdLead = generateEventId();
+    const eventIdContact = generateEventId();
 
-    // --- 1. Evento Customizado (ClickWhatsApp) ---
-    const customParams = { location, cta, page_path: path };
+    // --- 1. Evento Auxiliar (ClickWhatsApp) ---
+    // Mantido para análise de fluxo (não otimizado para conversão)
+    const clickParams = { location, cta, page_path: path };
 
     // Pixel (Browser)
     if (window.fbq) {
-      window.fbq('trackCustom', EVENT_CLICK_WHATSAPP, customParams, { eventID: eventIdClick });
+      window.fbq('trackCustom', EVENT_CLICK_WHATSAPP, clickParams, { eventID: eventIdClick });
     }
     // CAPI (Server)
-    sendToCAPI(EVENT_CLICK_WHATSAPP, eventIdClick, customParams);
+    sendToCAPI(EVENT_CLICK_WHATSAPP, eventIdClick, clickParams);
 
-    // --- 2. Evento Padrão (Lead) ---
-    // Value e Currency removidos para evitar distorção
-    const leadParams = {
-      content_name: cta,
-      content_category: 'WhatsApp Contact',
-      content_ids: [`wa_${location}`]
+    // --- 2. Evento PRINCIPAL de Conversão (ContactWhatsApp) ---
+    // Substitui o evento "Lead" para conformidade com Saúde
+    // Dados neutros apenas
+    const contactParams = {
+      content_name: "WhatsApp",
+      content_category: "Contact",
+      // page_path já é enviado automaticamente na URL, mas reforçamos
+      page_path: path
     };
 
-    // Pixel (Browser)
+    // Pixel (Browser) - Custom Event
     if (window.fbq) {
-      window.fbq('track', 'Lead', leadParams, { eventID: eventIdLead });
+      window.fbq('trackCustom', 'ContactWhatsApp', contactParams, { eventID: eventIdContact });
     }
-    // CAPI (Server)
-    sendToCAPI('Lead', eventIdLead, undefined, leadParams);
+    // CAPI (Server) - Custom Event
+    // Note: Para Custom Events no CAPI, passamos os dados em 'custom_data'
+    // A função sendToCAPI já trata isso (customData vs standardData)
+    sendToCAPI('ContactWhatsApp', eventIdContact, contactParams);
 
     // Atualiza timestamp do último disparo
     lastLeadTimeByPath[path] = now;
-    console.log(`[Meta Hybrid] Lead Registrado (TTL reset).`);
+    console.log(`[Meta Hybrid] Conversão ContactWhatsApp (Compliance Saúde): ${eventIdContact}`);
   };
 
   document.addEventListener('click', handleClick);

@@ -26,8 +26,9 @@ export const INSTAGRAM_LINK = "https://instagram.com/centromedicovillamed";
 // TRACKING CONSTANTS (PLACEHOLDERS OBRIGATÓRIOS)
 // Substitua {{META_PIXEL_ID}} pelo ID real do seu Pixel (ex: 123456789)
 export const META_PIXEL_ID = import.meta.env.VITE_META_PIXEL_ID;
-export const EVENT_CLICK_WHATSAPP = "ClickWhatsApp";
-export const EVENT_LEAD_WHATSAPP = "Lead";
+export const EVENT_CLICK_WHATSAPP = "ClickWhatsApp"; // Auxiliar (Clique)
+export const EVENT_CONTACT_WHATSAPP = "ContactWhatsApp"; // Principal (Conversão)
+// export const EVENT_LEAD_WHATSAPP = "Lead"; // REMOVIDO por Compliance (Saúde)
 
 export const BENEFITS: Benefit[] = [
   {
