@@ -25,12 +25,16 @@ const Services: React.FC = () => {
   "Urologia"
 ];
 
-  const exams = [
-    "Exames de Sangue", "Ultrassonografia", "Raio-X Digital", "Eletrocardiograma",
-    "Teste Ergométrico", "Holter 24h", "MAPA 24h", "Endoscopia",
-    "Papanicolau", "Audiometria", "Ecocardiograma", "Exames Admissionais",  "Exames Laboratoriais",
-  "Exames Cardiológicos",
-  ];
+ const exams = [
+  "Ultrassonografia",
+  "Eletrocardiograma",
+  "Holter 24h",
+  "MAPA 24h",
+  "Preventivo",
+  "Ecocardiograma",
+  "Exames Admissionais",
+  "Exames Laboratoriais",
+];
 
   return (
     <section id="servicos" className="py-20 bg-white">
