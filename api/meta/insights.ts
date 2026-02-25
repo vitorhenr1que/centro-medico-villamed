@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import validateRequest from '../_utils/auth';
-import { metaFetch, AD_ACCOUNT_ID } from '../_utils/meta';
-import * as cache from '../_utils/cache';
+import validateRequest from '../_utils/auth.js';
+import { metaFetch, AD_ACCOUNT_ID } from '../_utils/meta.js';
+import * as cache from '../_utils/cache.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (!validateRequest(req, res)) return;
